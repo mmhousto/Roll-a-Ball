@@ -27,5 +27,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(horizontal, 0, vertical);
 
         rb.AddForce(movement * speed);
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            rb.AddExplosionForce(500f, transform.position, 20f);
+        }
     }
 }
